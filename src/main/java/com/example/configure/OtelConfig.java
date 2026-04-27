@@ -1,11 +1,5 @@
 package com.example.configure;
 
-import com.example.exporter.JsonLoggingSpanExporter;
-import io.opentelemetry.exporter.logging.LoggingSpanExporter;
-import io.opentelemetry.sdk.trace.SdkTracerProvider;
-import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
-import io.opentelemetry.sdk.trace.export.SpanExporter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -15,10 +9,10 @@ public class OtelConfig {
     public LoggingSpanExporter loggingSpanExporter(){
       return LoggingSpanExporter.create(true);
     }*/
-    @Bean
+    /*@Bean
     public SpanExporter loggingSpanExporter(){
         return new JsonLoggingSpanExporter();
-    }
+    }*/
 
 
     //Not required. There is a default SdkTracerProvider LoggingSpanExporter bean get set into ti

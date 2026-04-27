@@ -65,10 +65,10 @@
 		</dependency>
 
 
-		<dependency>
+		<!--<dependency>
 			<groupId>io.opentelemetry</groupId>
 			<artifactId>opentelemetry-exporter-logging</artifactId>
-		</dependency>
+		</dependency>-->
 
 
 		<dependency>
