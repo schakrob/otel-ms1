@@ -114,6 +114,7 @@
 				<version>3.2.2</version>
 				<configuration>
 					<configLocation>config/checkstyle/checkstyle.xml</configLocation>
+					<suppressionsLocation>${basedir}/config/checkstyle/suppressions.xml</suppressionsLocation>
 					<encoding>UTF-8</encoding>
 					<consoleOutput>true</consoleOutput>
 					<failsOnError>false</failsOnError>
@@ -138,6 +139,7 @@
 					<rulesets>
 						<ruleset>config/pmd/ruleset.xml</ruleset>
 					</rulesets>
+					<suppressionsFile>${basedir}/config/pmd/pmd-suppressions.xml</suppressionsFile>
 					<targetJdk>21</targetJdk>
 					<failOnViolation>false</failOnViolation>
 				</configuration>
