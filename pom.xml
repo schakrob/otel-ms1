@@ -125,6 +125,7 @@
 						<phase>verify</phase>
 						<goals>
 							<goal>check</goal>
+							<goal>checkstyle</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -149,6 +150,7 @@
 						<phase>verify</phase>
 						<goals>
 							<goal>check</goal>
+							<goal>pmd</goal>
 						</goals>
 					</execution>
 				</executions>
