@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SpotBugs include filter: select a focused set of important bug patterns to report.
+  This file lists 10 important SpotBugs bug patterns that commonly indicate real defects.
+  You can reference this file from the SpotBugs Maven plugin with <includeFilterFile>.
+-->
+<FindBugsFilter>
+    <!-- 1: Null pointer dereferences on some execution paths -->
+    <Match>
+        <Bug pattern="NP_NULL_ON_SOME_PATH"/>
+    </Match>
+
+    <!-- 2: Null dereference of a parameter -->
+    <Match>
+        <Bug pattern="NP_NULL_PARAM_DEREF"/>
+    </Match>
+
+    <!-- 3: Ignored return value (e.g., InputStream.read/close, Collection.add) -->
+    <Match>
+        <Bug pattern="RV_RETURN_VALUE_IGNORED"/>
+    </Match>
+
+    <!-- 4: Unread field (field assigned but never read) -->
+    <Match>
+        <Bug pattern="URF_UNREAD_FIELD"/>
+    </Match>
+
+    <!-- 5: Dead local store (value assigned but never used) -->
+    <Match>
+        <Bug pattern="DLS_DEAD_LOCAL_STORE"/>
+    </Match>
+
+    <!-- 6: Exposure of internal representation via returning a reference to mutable object -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP"/>
+    </Match>
+
+    <!-- 7: Exposure of internal representation via array or collection field -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+
+    <!-- 8: Bad practice: use of equals on boxed primitives or identity comparisons -->
+    <Match>
+        <Bug pattern="BC_EQUALS_METHOD"/>
+    </Match>
+
+    <!-- 9: Bad synchronization practice (non-atomic operations on shared fields) -->
+    <Match>
+        <Bug pattern="IS2_INEFFICIENT_SYNCHRONIZATION"/>
+    </Match>
+
+    <!-- 10: Serialization-related risky fields or missing serialVersionUID -->
+    <Match>
+        <Bug pattern="SE_BAD_FIELD"/>
+    </Match>
+</FindBugsFilter>
