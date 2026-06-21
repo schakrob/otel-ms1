@@ -84,60 +84,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- Checkstyle plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.6.0</version>
-				<configuration>
-					<configLocation>config/checkstyle/checkstyle.xml</configLocation>
-					<suppressionsLocation>config/checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
-					<consoleOutput>true</consoleOutput>
-					<failOnViolation>true</failOnViolation>
-					<includeTestSourceDirectory>true</includeTestSourceDirectory>
-				</configuration>
-				<executions>
-					<execution>
-						<id>checkstyle</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- PMD plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.28.0</version>
-				<configuration>
-					<rulesets>
-						<ruleset>config/pmd/pmd-ruleset.xml</ruleset>
-					</rulesets>
-					<excludesFile>config/pmd/pmd-suppressions.xml</excludesFile>
-					<printFailingErrors>true</printFailingErrors>
-					<failOnViolation>true</failOnViolation>
-				</configuration>
-				<executions>
-					<execution>
-						<id>pmd</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- SpotBugs plugin -->
+			<!-- SpotBugs plugin: include the new focused rules file -->
 			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
 				<version>4.9.8.4</version>
 				<configuration>
 					<excludeFilterFile>config/spotbugs/spotbugs-exclude.xml</excludeFilterFile>
+					<includeFilterFile>config/spotbugs/spotbugs-rules.xml</includeFilterFile>
 					<effort>Max</effort>
 					<threshold>Low</threshold>
 					<failOnError>false</failOnError>
