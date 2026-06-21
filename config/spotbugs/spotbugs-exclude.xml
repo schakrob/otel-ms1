@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- 15 important SpotBugs filters/patterns: example rules and suppressed patterns -->
+    <!-- We suppress generated classes and one sample issue pattern -->
+
+    <!-- Exclude generated classes -->
+    <Match>
+        <Class name="~.*Generated.*"/>
+    </Match>
+
+    <!-- Exclude known bad practice in specific file -->
+    <Match>
+        <Class name="com.example.SomeLegacyClass"/>
+        <Bug pattern="NP_ALWAYS_NULL"/>
+    </Match>
+
+    <!-- Example: ignore findbugs:RV_EXCEPTION_TOO_LONG method length warnings for a class -->
+    <Match>
+        <Class name="com.example.LegacyUtils"/>
+        <Bug pattern="RV_EXCEPTION_TOO_LONG"/>
+    </Match>
+</FindBugsFilter>

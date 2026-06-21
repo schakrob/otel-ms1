@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- PMD exclusions as a plain XML wrapper (also referenced by the plugin). -->
+<exclusions>
+    <!-- Exclude a generated file or package from PMD analysis -->
+    <exclude>src/main/java/com/example/generated/GeneratedClass.java</exclude>
+</exclusions>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <!-- 15 commonly used checks -->
+    <module name="TreeWalker">
+        <!-- 1: Import order -->
+        <module name="ImportOrder">
+            <property name="order" value="static-first"/>
+            <property name="separateLineBetweenGroups" value="true"/>
+            <property name="groups" value="java,javax,org,com"/>
+        </module>
+
+        <!-- 2: No star imports -->
+        <module name="AvoidStarImport"/>
+
+        <!-- 3: Unused imports -->
+        <module name="UnusedImports"/>
+
+        <!-- 4: Indentation -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="tabWidth" value="4"/>
+        </module>
+
+        <!-- 5: Line length -->
+        <module name="LineLength">
+            <property name="max" value="120"/>
+        </module>
+
+        <!-- 6: Method length -->
+        <module name="MethodLength">
+            <property name="max" value="200"/>
+        </module>
+
+        <!-- 7: Parameter number -->
+        <module name="ParameterNumber">
+            <property name="max" value="7"/>
+        </module>
+
+        <!-- 8: Final parameters -->
+        <module name="FinalParameters"/>
+
+        <!-- 9: Magic number (allow -1,0,1) -->
+        <module name="MagicNumber">
+            <property name="ignoreNumbers" value="-1,0,1"/>
+            <property name="ignoreHashCodeMethod" value="true"/>
+        </module>
+
+        <!-- 10: Javadoc on public methods -->
+        <module name="JavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="allowMissingParamTags" value="true"/>
+        </module>
+
+        <!-- 11: Modifier order -->
+        <module name="ModifierOrder"/>
+
+        <!-- 12: Empty blocks -->
+        <module name="EmptyBlock">
+            <property name="option" value="text"/>
+        </module>
+
+        <!-- 13: Left curly brace style -->
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+
+        <!-- 14: Right curly -->
+        <module name="RightCurly"/>
+
+        <!-- 15: Need braces for if/else/for/while -->
+        <module name="NeedBraces"/>
+    </module>
+
+    <!-- Misc checks outside TreeWalker -->
+    <module name="SuppressWarningsHolder"/>
+</module>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Custom PMD ruleset" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.github.io/pmd-6.0.0/ruleset_xml_schema.xsd">
+    <description>Selected 15 important PMD checks: codesize, complexity, naming and best practices.</description>
+
+    <!-- 1: Cyclomatic complexity -->
+    <rule ref="category/java/codestyle.xml/CyclomaticComplexity">
+        <properties>
+            <property name="max" value="10"/>
+        </properties>
+    </rule>
+
+    <!-- 2: NPath complexity -->
+    <rule ref="category/java/codestyle.xml/NPathComplexity">
+        <properties>
+            <property name="max" value="200"/>
+        </properties>
+    </rule>
+
+    <!-- 3: Excessive method length -->
+    <rule ref="category/java/codesize.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="200"/>
+        </properties>
+    </rule>
+
+    <!-- 4: Excessive class length -->
+    <rule ref="category/java/codesize.xml/ExcessiveClassLength">
+        <properties>
+            <property name="max" value="2000"/>
+        </properties>
+    </rule>
+
+    <!-- 5: Too many parameters -->
+    <rule ref="category/java/design.xml/TooManyParameters">
+        <properties>
+            <property name="max" value="7"/>
+        </properties>
+    </rule>
+
+    <!-- 6: Too many fields -->
+    <rule ref="category/java/design.xml/TooManyFields">
+        <properties>
+            <property name="maxFields" value="15"/>
+        </properties>
+    </rule>
+
+    <!-- 7: Too many methods -->
+    <rule ref="category/java/design.xml/TooManyMethods">
+        <properties>
+            <property name="maxMethods" value="50"/>
+        </properties>
+    </rule>
+
+    <!-- 8: Long variable name (naming) -->
+    <rule ref="category/java/naming.xml/LongVariable">
+        <properties>
+            <property name="max" value="30"/>
+        </properties>
+    </rule>
+
+    <!-- 9: Long literal (duplicate strings) -->
+    <rule ref="category/java/strings.xml/DuplicateStringLiteral">
+        <properties>
+            <property name="minimum" value="3"/>
+        </properties>
+    </rule>
+
+    <!-- 10: Avoid duplicate literals -->
+    <rule ref="category/java/errorprone.xml/AvoidDuplicateLiterals"/>
+
+    <!-- 11: Simplify conditional expressions -->
+    <rule ref="category/java/bestpractices.xml/SimplifyConditional"/>
+
+    <!-- 12: Use equals instead of == for strings -->
+    <rule ref="category/java/errorprone.xml/UseEquals"/>
+
+    <!-- 13: Law of Demeter (feature envy) -->
+    <rule ref="category/java/design.xml/FeatureEnvy"/>
+
+    <!-- 14: Empty catch block -->
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+
+    <!-- 15: Avoid too many branches (Switch density) -->
+    <rule ref="category/java/codestyle.xml/ExcessiveSwitchStatements">
+        <properties>
+            <property name="max" value="10"/>
+        </properties>
+    </rule>
+
+</ruleset>
